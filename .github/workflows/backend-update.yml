@@ -21,8 +21,8 @@ jobs:
 
       - name: Commit & Push
         run: |
-          git config --global user.name "ammar-dev-bot"
-          git config --global user.email "ammarsattar85+bot@gmail.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "chore(core): backend logic refinements"
           git push

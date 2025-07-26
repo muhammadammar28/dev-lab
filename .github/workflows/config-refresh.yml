@@ -15,13 +15,13 @@ jobs:
 
       - name: Simulate config refresh
         run: |
-          echo "// config refresh: $(date)" >> configs/settings.js
+          echo "// config refresh: $(date)" >> configs/settings.ts
 
       - name: Commit & Push
         run: |
-          git config --global user.name "ammar-dev-bot"
-          git config --global user.email "ammarsattar85+bot@gmail.com"
-          git add configs/settings.js
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add configs/settings.ts
           git commit -m "chore(config): refresh settings"
           git push
         env:
