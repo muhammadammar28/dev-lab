@@ -15,16 +15,18 @@ jobs:
         with:
           ref: main
 
-      - name: Create or update file
+      - name: Update meaningful files
         run: |
-          echo "// Auto update on $(date)" >> activity-log.js
+          echo "- Daily note: Auto-update on $(date)" >> openai-playground/prompt-notes.md
+          echo "// auto update: $(date)" >> utils/helpers.js
+          echo "// activity updated: $(date)" >> activity-log.js
 
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "chore: automated commit to main" || echo "No changes to commit"
+          git commit -m "chore: automated daily update to logs and helpers" || echo "No changes to commit"
 
       - name: Push changes
         run: |
