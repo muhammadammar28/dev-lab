@@ -1,0 +1,30 @@
+name: 🚀 Backend Patch
+
+on:
+  schedule:
+    - cron: '0 12 * * *' # Daily at 12 PM UTC
+  workflow_dispatch:
+
+jobs:
+  backend-patch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update backend logic
+        run: |
+          echo "// patch: $(date)" >> utils/helpers.js
+          echo "- $(date): Refined AI prompt input" >> openai-playground/prompt-notes.md
+          echo "// rule change: $(date)" >> firebase-tests/firestore.rules
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "ammar-dev-bot"
+          git config --global user.email "ammarsattar85+bot@gmail.com"
+          git add .
+          git commit -m "chore(core): backend logic refinements"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PATH }}

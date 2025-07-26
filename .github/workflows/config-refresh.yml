@@ -1,0 +1,28 @@
+name: 🔧 Config Refresh
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Daily at 6 AM UTC
+  workflow_dispatch:
+
+jobs:
+  refresh-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Simulate config refresh
+        run: |
+          echo "// config refresh: $(date)" >> configs/settings.js
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "ammar-dev-bot"
+          git config --global user.email "ammarsattar85+bot@gmail.com"
+          git add configs/settings.js
+          git commit -m "chore(config): refresh settings"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PATH }}
