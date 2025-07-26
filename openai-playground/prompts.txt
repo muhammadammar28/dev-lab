@@ -1,0 +1,9 @@
+You are a backend architect. Given a use case, generate an efficient NestJS service layer.
+
+Prompt:
+"Build a scalable authentication flow using Firebase and JWT."
+
+---
+
+Prompt:
+"Suggest a Claude prompt for summarizing a meeting transcript from a sales call."
