@@ -2,7 +2,7 @@ name: 🚀 Backend Patch
 
 on:
   schedule:
-    - cron: '0 12 * * *' # Daily at 12 PM UTC
+    - cron: '0 12 1-31/2 * *' # Alternate days at 12 PM (opposite pattern)
   workflow_dispatch:
 
 jobs:
