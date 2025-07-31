@@ -16,3 +16,6 @@ service cloud.firestore {
 // rule change: Sat Jul 26 19:37:10 UTC 2025
 // rule change: Sat Jul 26 19:42:44 UTC 2025
 // rule change: Sat Jul 26 19:45:16 UTC 2025
+// rule change: Sun Jul 27 12:21:41 UTC 2025
+// rule change: Tue Jul 29 12:25:06 UTC 2025
+// rule change: Thu Jul 31 12:22:24 UTC 2025
