@@ -1,28 +1,28 @@
-name: 🔧 Config Refresh
+  name: 🔧 Config Refresh
 
-on:
-  schedule:
-    - cron: '0 6 */2 * *' # Every 2nd day at 6 AM
-  workflow_dispatch:
+  on:
+    schedule:
+      - cron: '0 6 */2 * *' # Every 2nd day at 6 AM
+    workflow_dispatch:
 
-jobs:
-  refresh-config:
-    runs-on: ubuntu-latest
+  jobs:
+    refresh-config:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
 
-      - name: Simulate config refresh
-        run: |
-          echo "// config refresh: $(date)" >> configs/settings.ts
+        - name: Simulate config refresh
+          run: |
+            echo "// config refresh: $(date)" >> configs/settings.ts
 
-      - name: Commit & Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add configs/settings.ts
-          git commit -m "chore(config): refresh settings"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PATH }}
+        - name: Commit & Push
+          run: |
+            git config --global user.name "muhammadammar28"
+            git config --global user.email "ammarsattar85@gmail.com"
+            git add configs/settings.ts
+            git commit -m "chore(config): refresh settings"
+            git push
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_PATH }}
