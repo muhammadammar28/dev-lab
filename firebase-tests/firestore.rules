@@ -23,3 +23,4 @@ service cloud.firestore {
 // rule change: Fri Aug  1 12:23:55 UTC 2025
 // rule change: Sun Aug  3 12:21:34 UTC 2025
 // rule change: Tue Aug  5 12:25:42 UTC 2025
+// rule change: Thu Aug  7 12:25:14 UTC 2025
